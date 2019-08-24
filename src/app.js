@@ -4,7 +4,9 @@ const express = require('express');
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast')
+
 const app = express();
+const port = process.env.PORT || 3000
 
 console.log(path.join(__dirname,'../public'));
 const publicDirectoryPath = path.join(__dirname,'..','/public');
@@ -84,7 +86,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, ()  => {
-    console.log('node 3000 port is working!');
+app.listen(port, ()  => {
+    console.log('node app working on port ' + port);
 })
 
