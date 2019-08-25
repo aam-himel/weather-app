@@ -9,8 +9,8 @@ const textSecond = document.querySelector('#text-second');
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const location = search.value;
+    
     textFirst.textContent = 'loading...';
     textSecond.textContent = '';
 
