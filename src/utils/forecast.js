@@ -9,7 +9,7 @@ forecast = (latitude, longtitude, callback) =>  {
         }else if(body.error){
             callback('Could not find any location!');
         }else{
-            callback(undefined,body.daily.summary + 'Current temperature is ' + body.currently.temperature + ' and the chances of rain is ' + body.currently.precipProbability)
+            callback(undefined,body.daily.summary + 'Current temperature is ' + Math.ceil(body.currently.temperature) + '℃ and Feels like ' +  Math.floor(body.hourly.data[0].apparentTemperature) + '℃, Temp Low : ' + Math.floor(body.daily.data[0].temperatureLow) + '℃, Temp High: ' + Math.ceil(body.daily.data[0].temperatureHigh) + '℃')
     
         }
     })
